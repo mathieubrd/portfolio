@@ -17,7 +17,7 @@ export default function RootLayout({
         ></meta>
       </Head>
       <body>
-        <div className="container mx-auto px-6 py-6 flex flex-col items-center">
+        <div className="container mx-auto max-w-lg px-6 py-6 flex flex-col items-center">
           {children}
           <Analytics />
         </div>
