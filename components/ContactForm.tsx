@@ -63,7 +63,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               autoComplete="email"
               placeholder="walter.sobchak@overtheline.com"
               label="email"
-              size="lg"
               isRequired
               isDisabled={state?.success}
               errorMessage={state?.errors?.email?._errors}
