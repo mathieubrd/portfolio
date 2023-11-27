@@ -16,7 +16,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
   return (
     <div className={clsx(className, "w-full")} {...props}>
-      <h2 className="text-4xl font-bold tracking-tight font-mono text-center mb-10">
+      <h2 className="text-4xl font-bold font-mono text-center mb-10">
         Contact Me
       </h2>
 
