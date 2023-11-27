@@ -1,6 +1,6 @@
 "use client"
 
-import { Image } from "@nextui-org/react"
+import Image from "next/image"
 import banner from "@/public/banner.png"
 import clsx from "clsx"
 import { motion } from "framer-motion"
@@ -20,6 +20,13 @@ export const HeroBanner: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
       <p className="font-mono text-md">AWS Solutions Architect</p>
     </motion.div>
 
-    <Image src={banner.src} className="object-contain max-h-96 sm:z-10" />
+    <Image
+      alt="A drawing representing a man working on a computer"
+      src={banner}
+      width={513}
+      height={382}
+      objectFit="contain"
+      className="sm:z-10 sm:mt-12"
+    />
   </div>
 )
