@@ -16,9 +16,11 @@ export default function RootLayout({
           content="Personal portfolio of Mathieu Brochard - AWS Solutions Architect"
         ></meta>
       </Head>
+
       <body>
-        <div className="container mx-auto max-w-lg px-6 py-6 flex flex-col items-center">
+        <div className="container max-w-6xl mx-auto px-8 py-6 flex flex-col items-center">
           {children}
+
           <Analytics />
         </div>
       </body>
