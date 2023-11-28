@@ -16,9 +16,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
   return (
     <div className={clsx(className, "w-full")} {...props}>
-      <h2 className="text-4xl font-bold font-mono text-center mb-10">
+      <h1 className="text-4xl font-bold font-mono text-center mb-10">
         Contact Me
-      </h2>
+      </h1>
 
       <form action={formAction} className="mx-auto">
         <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
