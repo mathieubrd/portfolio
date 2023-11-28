@@ -33,7 +33,7 @@ const Experience: React.FC<ExperienceProps> = ({
           </span>
         </div>
 
-        <div className="mb-2 text-sm leading-none">AWS Architect</div>
+        <div className="mb-4 text-sm leading-none">{jobName}</div>
 
         {children}
       </div>
@@ -50,10 +50,27 @@ export const ExperienceTimeline = () => {
         jobName="AWS Architect"
         date="2020 - now"
       >
-        <p className="mb-4 text-base font-normal text-gray-400">
-          Get access to over 20+ pages including a dashboard layout, charts,
-          kanban board, calendar, and pre-order E-commerce & Marketing pages.
-        </p>
+        <ul className="text-gray-400 space-y-4">
+          <li>
+            <b>Airbus</b>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </li>
+
+          <li>
+            <b>Alstom</b>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </li>
+        </ul>
       </Experience>
 
       <Experience
@@ -62,10 +79,17 @@ export const ExperienceTimeline = () => {
         jobName="Cybersecurity Engineer"
         date="2018 - 2020"
       >
-        <p className="mb-4 text-base font-normal text-gray-400">
-          Get access to over 20+ pages including a dashboard layout, charts,
-          kanban board, calendar, and pre-order E-commerce & Marketing pages.
-        </p>
+        <ul className="text-gray-400 space-y-4">
+          <li>
+            <b>Airbus</b>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </li>
+        </ul>
       </Experience>
     </ol>
   )

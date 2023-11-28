@@ -9,7 +9,7 @@ export default function Home() {
       <div className="max-w-lg mb-10 flex flex-col gap-y-10">
         <HeroBanner />
 
-        <BusinessCard />
+        <BusinessCard className="sm:max-w-md sm:m-auto" />
 
         <ExperienceTimeline />
       </div>

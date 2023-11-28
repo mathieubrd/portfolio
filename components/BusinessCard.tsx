@@ -29,7 +29,7 @@ export const BusinessCard: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 
           <div className="text-small text-default-500 flex items-center">
             <MapPinIcon className="w-4 mr-1" />
-            <span>Fougères, France</span>
+            <span>Toulouse, France</span>
           </div>
         </div>
       </CardHeader>
