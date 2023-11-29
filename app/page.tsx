@@ -1,7 +1,9 @@
-import { BusinessCard } from "@/components/BusinessCard"
 import { ContactForm } from "@/components/ContactForm"
 import { ExperienceTimeline } from "@/components/ExperienceTimeline"
 import { HeroBanner } from "@/components/HeroBanner"
+import { Me } from "@/components/Me"
+import { Skills } from "@/components/Skills"
+import { Divider } from "@nextui-org/react"
 
 export default function Home() {
   return (
@@ -9,12 +11,16 @@ export default function Home() {
       <div className="max-w-lg mb-10 flex flex-col gap-y-10">
         <HeroBanner />
 
-        <BusinessCard className="sm:max-w-md sm:m-auto" />
-
-        <ExperienceTimeline />
+        <Me />
       </div>
 
-      <ContactForm />
+      <Skills className="mb-10" />
+
+      <div className="max-w-lg">
+        <ExperienceTimeline />
+
+        <ContactForm />
+      </div>
     </div>
   )
 }

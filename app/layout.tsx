@@ -18,7 +18,7 @@ export default function RootLayout({
       </Head>
 
       <body>
-        <div className="container max-w-6xl mx-auto px-8 py-6 flex flex-col items-center">
+        <div className="container max-w-6xl mx-auto px-6 py-6 flex flex-col items-center">
           {children}
 
           <Analytics />
