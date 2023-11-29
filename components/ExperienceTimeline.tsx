@@ -1,5 +1,6 @@
 import capgeminiLogo from "@/public/capgemini.png"
 import sopraSteriaLogo from "@/public/sopra-steria.png"
+import { Chip } from "@nextui-org/react"
 import Image, { StaticImageData } from "next/image"
 
 type ExperienceProps = {
@@ -23,12 +24,12 @@ const Experience: React.FC<ExperienceProps> = ({
       </span>
 
       <div className="ml-2">
-        <div className="flex items-center mb-1">
+        <div className="flex items-center mb-1 justify-between">
           <span className="text-lg font-semibold text-white">
             {companyName}
           </span>
 
-          <span className="text-sm font-medium me-2 px-2.5 py-0.5 rounded bg-blue-900 text-blue-300 ms-3">
+          <span className="text-sm font-medium me-2 px-2.5 py-0.5 rounded bg-blue-600 text-white ms-3">
             {date}
           </span>
         </div>
@@ -43,54 +44,100 @@ const Experience: React.FC<ExperienceProps> = ({
 
 export const ExperienceTimeline = () => {
   return (
-    <ol className="relative border-s border-gray-700">
-      <Experience
-        companyName="Capgemini"
-        icon={capgeminiLogo}
-        jobName="AWS Architect"
-        date="2020 - now"
-      >
-        <ul className="text-gray-400 space-y-4">
-          <li>
-            <b>Airbus</b>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </li>
+    <>
+      <ol className="relative border-s border-gray-700">
+        <Experience
+          companyName="Capgemini"
+          icon={capgeminiLogo}
+          jobName="AWS Architect & DevOps Engineer"
+          date="2020 - now"
+        >
+          <ul className="text-gray-400 space-y-4">
+            <li>
+              <b>Airbus</b>
 
-          <li>
-            <b>Alstom</b>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </li>
-        </ul>
-      </Experience>
+              <p className="mb-2">
+                AWS architect and full-stack developer in the cloud platform
+                team. Development of a GraphQL API and a React web application
+                used to easily manage Airbus applications in the cloud.
+              </p>
 
-      <Experience
-        companyName="Sopra Steria"
-        icon={sopraSteriaLogo}
-        jobName="Cybersecurity Engineer"
-        date="2018 - 2020"
-      >
-        <ul className="text-gray-400 space-y-4">
-          <li>
-            <b>Airbus</b>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </li>
-        </ul>
-      </Experience>
-    </ol>
+              <div className="flex gap-2">
+                <Chip size="sm">AWS</Chip>
+                <Chip size="sm">AppSync</Chip>
+                <Chip size="sm">Lambda</Chip>
+                <Chip size="sm">Typescript</Chip>
+                <Chip size="sm">React</Chip>
+                <Chip size="sm">GraphQL</Chip>
+              </div>
+            </li>
+
+            <li>
+              <b>Alstom</b>
+
+              <p className="mb-2">
+                Development of a monitoring solution in Azure using Azure
+                Monitor and Elastic. Build a cloud SIEM using QRadar to detect
+                threats in Alstom's Azure platform.
+              </p>
+
+              <div className="flex gap-2">
+                <Chip size="sm">Azure</Chip>
+                <Chip size="sm">Azure Monitor</Chip>
+                <Chip size="sm">Elastic</Chip>
+                <Chip size="sm">QRadar</Chip>
+              </div>
+            </li>
+          </ul>
+        </Experience>
+
+        <Experience
+          companyName="Sopra Steria"
+          icon={sopraSteriaLogo}
+          jobName="Cybersecurity Engineer"
+          date="2018 - 2020"
+        >
+          <ul className="text-gray-400 space-y-4">
+            <li>
+              <b>Airbus</b>
+
+              <p className="mb-2">
+                Definition of security standards to build hardened VM images for
+                AWS. Build SCAP and DSC scripts to automatically produce
+                hardened images. Develop an AWS AMI Factory to produce AMIs
+                using a DevOps approach.
+              </p>
+
+              <div className="flex gap-2">
+                <Chip size="sm">SCAP</Chip>
+                <Chip size="sm">DSC</Chip>
+                <Chip size="sm">AWS</Chip>
+                <Chip size="sm">Python</Chip>
+                <Chip size="sm">Jenkins</Chip>
+                <Chip size="sm">Packer</Chip>
+              </div>
+            </li>
+
+            <li>
+              <b>Air France</b>
+
+              <p className="mb-2">
+                Design a build a cloud data lake to collect logs from AWS using
+                Splunk. Collect logs from EC2 instances and CloudWatch to
+                Splunk.
+              </p>
+
+              <div className="flex gap-2">
+                <Chip size="sm">AWS</Chip>
+                <Chip size="sm">Splunk</Chip>
+                <Chip size="sm">CloudWatch</Chip>
+                <Chip size="sm">CloudTrail</Chip>
+                <Chip size="sm">AWS Kinesis</Chip>
+              </div>
+            </li>
+          </ul>
+        </Experience>
+      </ol>
+    </>
   )
 }
