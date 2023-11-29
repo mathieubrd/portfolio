@@ -1,15 +1,7 @@
 import { MapPinIcon } from "@heroicons/react/24/solid"
-import {
-  Card,
-  CardHeader,
-  Avatar,
-  CardBody,
-  CardFooter,
-  Chip,
-  Link,
-  Divider,
-} from "@nextui-org/react"
+import { Avatar, Chip, Link } from "@nextui-org/react"
 import { GitHubIcon } from "./GitHubIcon"
+import me from "@/public/me.png"
 
 export const Me: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
@@ -17,12 +9,7 @@ export const Me: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div className={className}>
       <div className="flex mb-4">
-        <Avatar
-          showFallback
-          src="https://avatars.githubusercontent.com/u/10001635?v=4"
-          className="mr-4"
-          isBordered
-        />
+        <Avatar showFallback src={me.src} className="mr-4" isBordered />
 
         <div className="flex flex-col">
           <p className="font-semibold">Mathieu Brochard</p>
