@@ -16,12 +16,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
   return (
     <div className={clsx(className, "w-full")} {...props}>
-      <h1 className="text-4xl font-bold font-mono text-center mb-10">
-        Contact Me
-      </h1>
+      <h1 className="text-3xl font-bold mb-6">Contact Me</h1>
 
       <form action={formAction} className="mx-auto">
-        <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2">
           <Input
             type="text"
             name="firstName"
@@ -31,6 +29,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             isRequired
             isDisabled={state?.success}
             errorMessage={state?.errors?.firstName?._errors}
+            size="sm"
           />
 
           <Input
@@ -42,6 +41,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             isRequired
             isDisabled={state?.success}
             errorMessage={state?.errors?.lastName?._errors}
+            size="sm"
           />
 
           <div className="sm:col-span-2">
@@ -53,6 +53,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               placeholder="Hollywood Star Lanes"
               isDisabled={state?.success}
               errorMessage={state?.errors?.company?._errors}
+              size="sm"
             />
           </div>
 
@@ -66,6 +67,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               isRequired
               isDisabled={state?.success}
               errorMessage={state?.errors?.email?._errors}
+              size="sm"
             />
           </div>
 
@@ -81,7 +83,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           </div>
         </div>
 
-        <div className="mt-6 flex justify-end">
+        <div className="mt-4 flex justify-end">
           {state?.success ? (
             <Button
               color="success"
@@ -89,6 +91,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               disableRipple
               disableAnimation
               endContent={<HeartIcon className="w-6" />}
+              size="sm"
             >
               Thanks for your message!
             </Button>
@@ -105,14 +108,14 @@ const SubmitButton: React.FC = () => {
   const { pending } = useFormStatus()
 
   return pending ? (
-    <Button type="submit" color="primary" size="lg" isDisabled isLoading>
+    <Button type="submit" color="primary" size="md" isDisabled isLoading>
       Sending
     </Button>
   ) : (
     <Button
       type="submit"
       color="primary"
-      size="lg"
+      size="md"
       startContent={<EnvelopeIcon className="w-6" />}
     >
       Send
