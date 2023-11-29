@@ -7,16 +7,16 @@ import {
   CardFooter,
   Chip,
   Link,
+  Divider,
 } from "@nextui-org/react"
 import { GitHubIcon } from "./GitHubIcon"
-import clsx from "clsx"
 
-export const BusinessCard: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+export const Me: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
 }) => {
   return (
-    <Card className={clsx(className, "p-1")}>
-      <CardHeader>
+    <div className={className}>
+      <div className="flex mb-4">
         <Avatar
           showFallback
           src="https://avatars.githubusercontent.com/u/10001635?v=4"
@@ -32,22 +32,22 @@ export const BusinessCard: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
             <span>Toulouse, France</span>
           </div>
         </div>
-      </CardHeader>
+      </div>
 
-      <CardBody>
+      <div className="mb-4">
         <p className="text-default-500 text-justify">
-          Experienced AWS Solutions Architect and software engineer at
-          Capgemini, specializing in innovative serverless architectures.
+          Hello 👋 I'm Mathieu, AWS Architect and Software Engineer,
+          specializing in serverless technologies. Passionate about designing
+          scalable and efficient cloud solutions, I combine my knowledge of AWS
+          with a DevOps approach to drive innovation in serverless computing.
         </p>
-      </CardBody>
+      </div>
 
-      <CardFooter>
-        <Link href="https://github.com/mathieubrd" isExternal>
-          <Chip avatar={<GitHubIcon />} color="primary">
-            @mathieubrd
-          </Chip>
-        </Link>
-      </CardFooter>
-    </Card>
+      <Link href="https://github.com/mathieubrd" isExternal>
+        <Chip avatar={<GitHubIcon />} color="primary">
+          Follow me on GitHub!
+        </Chip>
+      </Link>
+    </div>
   )
 }
