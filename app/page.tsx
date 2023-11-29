@@ -3,21 +3,18 @@ import { ExperienceTimeline } from "@/components/ExperienceTimeline"
 import { HeroBanner } from "@/components/HeroBanner"
 import { Me } from "@/components/Me"
 import { Skills } from "@/components/Skills"
-import { Divider } from "@nextui-org/react"
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center">
-      <div className="max-w-lg mb-10 flex flex-col gap-y-10">
-        <HeroBanner />
+    <div className="flex flex-col gap-y-10 items-center">
+      <HeroBanner />
 
-        <Me />
-      </div>
+      <Me className="sm:max-w-lg" />
 
-      <Skills className="mb-10" />
+      <Skills />
 
-      <div className="max-w-lg">
-        <ExperienceTimeline />
+      <div className="sm:max-w-lg">
+        <ExperienceTimeline className="pl-3" />
 
         <ContactForm />
       </div>

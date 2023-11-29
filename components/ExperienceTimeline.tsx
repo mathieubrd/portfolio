@@ -1,6 +1,7 @@
 import capgeminiLogo from "@/public/capgemini.png"
 import sopraSteriaLogo from "@/public/sopra-steria.png"
 import { Chip } from "@nextui-org/react"
+import clsx from "clsx"
 import Image, { StaticImageData } from "next/image"
 
 type ExperienceProps = {
@@ -15,10 +16,11 @@ const Experience: React.FC<ExperienceProps> = ({
   companyName,
   jobName,
   date,
+  className,
   children,
 }) => {
   return (
-    <li className="mb-10 ms-6">
+    <li className={clsx(className, "mb-10 ms-6")}>
       <span className="absolute flex items-center justify-center w-8 h-8 rounded-full -start-4 bg-white">
         <Image alt="Company Logo" src={icon} width={20} height={20} />
       </span>
@@ -42,9 +44,11 @@ const Experience: React.FC<ExperienceProps> = ({
   )
 }
 
-export const ExperienceTimeline = () => {
+export const ExperienceTimeline: React.FC<
+  React.HTMLAttributes<HTMLDivElement>
+> = ({ className }) => {
   return (
-    <>
+    <div className={className}>
       <ol className="relative border-s border-gray-700">
         <Experience
           companyName="Capgemini"
@@ -62,7 +66,7 @@ export const ExperienceTimeline = () => {
                 used to easily manage Airbus applications in the cloud.
               </p>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 <Chip size="sm">AWS</Chip>
                 <Chip size="sm">AppSync</Chip>
                 <Chip size="sm">Lambda</Chip>
@@ -81,7 +85,7 @@ export const ExperienceTimeline = () => {
                 threats in Alstom's Azure platform.
               </p>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 <Chip size="sm">Azure</Chip>
                 <Chip size="sm">Azure Monitor</Chip>
                 <Chip size="sm">Elastic</Chip>
@@ -108,7 +112,7 @@ export const ExperienceTimeline = () => {
                 using a DevOps approach.
               </p>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 <Chip size="sm">SCAP</Chip>
                 <Chip size="sm">DSC</Chip>
                 <Chip size="sm">AWS</Chip>
@@ -127,7 +131,7 @@ export const ExperienceTimeline = () => {
                 Splunk.
               </p>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 <Chip size="sm">AWS</Chip>
                 <Chip size="sm">Splunk</Chip>
                 <Chip size="sm">CloudWatch</Chip>
@@ -138,6 +142,6 @@ export const ExperienceTimeline = () => {
           </ul>
         </Experience>
       </ol>
-    </>
+    </div>
   )
 }
