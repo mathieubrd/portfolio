@@ -62,8 +62,8 @@ export const ExperienceTimeline: React.FC<
 
               <p className="mb-2">
                 AWS architect and full-stack developer in the cloud platform
-                team. Development of a GraphQL API and a React web application
-                used to easily manage Airbus applications in the cloud.
+                team. Developed a GraphQL API and a React web application used
+                to easily manage Airbus applications in the cloud.
               </p>
 
               <div className="flex gap-2 flex-wrap">
@@ -80,8 +80,8 @@ export const ExperienceTimeline: React.FC<
               <b>Alstom</b>
 
               <p className="mb-2">
-                Development of a monitoring solution in Azure using Azure
-                Monitor and Elastic. Build a cloud SIEM using QRadar to detect
+                Developed a logging and monitoring solution in Azure using Azure
+                Monitor and Elastic. Built a cloud SIEM using QRadar to detect
                 threats in Alstom's Azure platform.
               </p>
 
@@ -106,10 +106,10 @@ export const ExperienceTimeline: React.FC<
               <b>Airbus</b>
 
               <p className="mb-2">
-                Definition of security standards to build hardened VM images for
-                AWS. Build SCAP and DSC scripts to automatically produce
-                hardened images. Develop an AWS AMI Factory to produce AMIs
-                using a DevOps approach.
+                Defined security standards to build hardened VM images for AWS.
+                Built SCAP and DSC scripts to automatically produce hardened
+                images. Developed an AWS AMI Factory to produce AMIs using a
+                DevOps approach.
               </p>
 
               <div className="flex gap-2 flex-wrap">
@@ -126,8 +126,8 @@ export const ExperienceTimeline: React.FC<
               <b>Air France</b>
 
               <p className="mb-2">
-                Design a build a cloud data lake to collect logs from AWS using
-                Splunk. Collect logs from EC2 instances and CloudWatch to
+                Designed and built a cloud data lake to collect logs from AWS
+                using Splunk. Collect logs from EC2 instances and CloudWatch to
                 Splunk.
               </p>
 
