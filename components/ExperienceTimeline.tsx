@@ -20,7 +20,7 @@ const Experience: React.FC<ExperienceProps> = ({
   children,
 }) => {
   return (
-    <li className={clsx(className, "mb-10 ms-6")}>
+    <li className={clsx(className, "ms-6")}>
       <span className="absolute flex items-center justify-center w-8 h-8 rounded-full -start-4 bg-white">
         <Image alt="Company Logo" src={icon} width={20} height={20} />
       </span>
@@ -49,7 +49,7 @@ export const ExperienceTimeline: React.FC<
 > = ({ className }) => {
   return (
     <div className={className}>
-      <ol className="relative border-s border-gray-700">
+      <ol className="relative border-s border-gray-700 space-y-10">
         <Experience
           companyName="Capgemini"
           icon={capgeminiLogo}
