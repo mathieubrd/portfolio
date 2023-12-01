@@ -82,7 +82,7 @@ export const ExperienceTimeline: React.FC<
               <p className="mb-2">
                 Developed a logging and monitoring solution in Azure using Azure
                 Monitor and Elastic. Built a cloud SIEM using QRadar to detect
-                threats in Alstom's Azure platform.
+                threats in Alstom&apos;s Azure platform.
               </p>
 
               <div className="flex gap-2 flex-wrap">

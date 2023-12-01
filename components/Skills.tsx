@@ -1,13 +1,4 @@
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Chip,
-  Divider,
-} from "@nextui-org/react"
-import Image from "next/image"
-import awsLogo from "@/public/aws.png"
+import { Card, CardBody, CardFooter, CardHeader, Chip } from "@nextui-org/react"
 import clsx from "clsx"
 import { CloudIcon, Square3Stack3DIcon } from "@heroicons/react/24/solid"
 
@@ -24,7 +15,7 @@ const Skill: React.FC<SkillProps> = ({
   icon,
   children,
 }) => {
-  const techChips = techs.map((tech) => <Chip>{tech}</Chip>)
+  const techChips = techs.map((tech) => <Chip key={tech}>{tech}</Chip>)
 
   return (
     <Card className={clsx(className, "p-2")}>
