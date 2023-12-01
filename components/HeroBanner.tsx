@@ -25,7 +25,7 @@ export const HeroBanner: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
       src={banner}
       width={513}
       height={382}
-      objectFit="contain"
+      priority
       className="sm:z-10 sm:mt-12"
       loading="eager"
     />
