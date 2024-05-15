@@ -1,7 +1,7 @@
 "use client"
 
 import { submitContactForm } from "@/app/actions"
-import { EnvelopeIcon, HeartIcon } from "@heroicons/react/24/solid"
+import { EnvelopeIcon, RocketLaunchIcon } from "@heroicons/react/24/solid"
 import { Button, Input, Textarea } from "@nextui-org/react"
 import clsx from "clsx"
 import { useFormState, useFormStatus } from "react-dom"
@@ -88,7 +88,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               variant="bordered"
               disableRipple
               disableAnimation
-              endContent={<HeartIcon className="w-6" />}
+              endContent={<RocketLaunchIcon className="w-6" />}
               size="sm"
             >
               Thanks for your message!
