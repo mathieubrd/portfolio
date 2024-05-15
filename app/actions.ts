@@ -54,7 +54,7 @@ export const submitContactForm = async (
   const resend = new Resend(process.env.RESEND_API_KEY)
 
   await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "contact@mathieubrochard.com",
     to:
       process.env.VERCEL_ENV === "production"
         ? "mathieu.brochard@outlook.com"
