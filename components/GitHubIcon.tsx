@@ -1,14 +1,8 @@
 export const GitHubIcon: React.FC<React.HTMLAttributes<SVGElement>> = ({
-	className,
 	...props
 }) => {
 	return (
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			className={className}
-			{...props}
-			viewBox="0 0 100 100"
-		>
+		<svg xmlns="http://www.w3.org/2000/svg" {...props} viewBox="0 0 100 100">
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"

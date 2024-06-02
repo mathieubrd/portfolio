@@ -1,7 +1,9 @@
 import { MapPinIcon } from "@heroicons/react/24/solid"
-import { Avatar, Chip, Link } from "@nextui-org/react"
+import { Avatar } from "@nextui-org/react"
 import { GitHubIcon } from "./GitHubIcon"
 import me from "@/public/me.png"
+import { LinkedInIcon } from "./LinkedInIcon"
+import { FollowButton } from "./FollowButton"
 
 export const Me: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 	className,
@@ -30,11 +32,19 @@ export const Me: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 				</p>
 			</div>
 
-			<Link href="https://github.com/mathieubrd" isExternal>
-				<Chip avatar={<GitHubIcon />} color="primary">
-					Follow me on GitHub!
-				</Chip>
-			</Link>
+			<div className="flex gap-x-4">
+				<FollowButton
+					icon={<GitHubIcon />}
+					text="Follow me on GitHub!"
+					link="https://github.com/mathieubrd"
+				/>
+
+				<FollowButton
+					icon={<LinkedInIcon />}
+					text="Follow me on LinkedIn!"
+					link="https://linkedin.com/in/mathieubrochard"
+				/>
+			</div>
 		</div>
 	)
 }
