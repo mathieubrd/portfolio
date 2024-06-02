@@ -56,6 +56,26 @@ export const ExperienceTimeline: React.FC<
 					jobName="AWS Architect & DevOps Engineer"
 					date="2020 - now"
 				>
+					<ul className="text-gray-400 space-y-4">
+						<li>
+							<b>Air France-KLM</b>
+
+							<p className="mb-2">
+								Help the customer adopting the DevOps concepts. Deployment of an
+								internal developer portal (Backstage). Reduce and automate
+								processes between teams.
+							</p>
+
+							<div className="flex gap-2 flex-wrap">
+								<Chip size="sm">Backstage</Chip>
+								<Chip size="sm">Typescript</Chip>
+								<Chip size="sm">React</Chip>
+								<Chip size="sm">Node.js</Chip>
+								<Chip size="sm">Azure</Chip>
+								<Chip size="sm">DevOps</Chip>
+							</div>
+						</li>
+
 						<li>
 							<b>Airbus</b>
 
