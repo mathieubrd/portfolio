@@ -40,7 +40,7 @@ export const ContactMeFloatingButton: React.FC<ButtonProps> = ({
 			transition={{ y: { duration: 2, repeat: Infinity } }}
 			className={clsx(
 				shouldShow ? "opacity-100" : "opacity-0",
-				"transition-opacity fixed bottom-10 left-10 right-10 flex justify-center sm:justify-end",
+				"transition-opacity fixed bottom-10 left-10 right-10 flex justify-center sm:justify-end z-10",
 			)}
 		>
 			<Button
