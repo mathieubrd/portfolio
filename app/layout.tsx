@@ -1,3 +1,4 @@
+import { ContactMeFloatingButton } from "@/components/ContactMeFloatingButton"
 import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
 
@@ -22,6 +23,8 @@ export default function RootLayout({
 
 					<Analytics />
 				</div>
+
+				<ContactMeFloatingButton className="fixed bottom-10 right-10" />
 			</body>
 		</html>
 	)
