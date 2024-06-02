@@ -40,8 +40,7 @@ export const ContactMeFloatingButton: React.FC<ButtonProps> = ({
 			transition={{ y: { duration: 2, repeat: Infinity } }}
 			className={clsx(
 				shouldShow ? "opacity-100" : "opacity-0",
-				"transition-opacity",
-				className,
+				"transition-opacity fixed bottom-10 left-10 right-10 flex justify-center sm:justify-end",
 			)}
 		>
 			<Button
@@ -50,7 +49,10 @@ export const ContactMeFloatingButton: React.FC<ButtonProps> = ({
 				radius="full"
 				startContent={<EnvelopeIcon className="w-6" />}
 				endContent={<ChevronDoubleDownIcon className="w-6" />}
-				className="bg-gradient-to-tr from-pink-500 to-yellow-500"
+				className={clsx(
+					"bg-gradient-to-tr from-pink-500 to-yellow-500",
+					className,
+				)}
 				{...props}
 			>
 				Contact Me

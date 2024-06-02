@@ -24,7 +24,7 @@ export default function RootLayout({
 					<Analytics />
 				</div>
 
-				<ContactMeFloatingButton className="fixed bottom-10 right-10" />
+				<ContactMeFloatingButton />
 			</body>
 		</html>
 	)

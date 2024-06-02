@@ -1,21 +1,31 @@
-import { Chip, Link, LinkProps } from "@nextui-org/react"
+import { Button, ButtonProps, Link } from "@nextui-org/react"
+import clsx from "clsx"
 import { ReactNode } from "react"
 
 type FollowButtonProps = {
 	icon: ReactNode
 	link: string
 	text: string
-} & LinkProps
+} & ButtonProps
 
 export const FollowButton: React.FC<FollowButtonProps> = ({
 	icon,
 	link,
 	text,
+	className,
 	...props
 }) => (
-	<Link href={link} isExternal {...props}>
-		<Chip avatar={icon} className="px-2 py-4" color="primary">
-			{text}
-		</Chip>
-	</Link>
+	<Button
+		as={Link}
+		href={link}
+		isExternal
+		startContent={icon}
+		className={clsx(className, "px-2 py-4")}
+		color="primary"
+		size="sm"
+		radius="full"
+		{...props}
+	>
+		<span className="font-bold">{text}</span>
+	</Button>
 )

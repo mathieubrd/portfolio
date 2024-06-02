@@ -32,15 +32,15 @@ export const Me: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 				</p>
 			</div>
 
-			<div className="flex gap-x-4">
+			<div className="flex flex-col sm:flex-row gap-y-4 sm:gap-x-4">
 				<FollowButton
-					icon={<GitHubIcon />}
+					icon={<GitHubIcon className="w-6" />}
 					text="Follow me on GitHub!"
 					link="https://github.com/mathieubrd"
 				/>
 
 				<FollowButton
-					icon={<LinkedInIcon />}
+					icon={<LinkedInIcon className="w-6" />}
 					text="Follow me on LinkedIn!"
 					link="https://linkedin.com/in/mathieubrochard"
 				/>
