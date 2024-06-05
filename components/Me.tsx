@@ -18,7 +18,7 @@ export const Me: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 
 					<div className="text-small text-default-500 flex items-center">
 						<MapPinIcon className="w-4 mr-1" />
-						<span>Toulouse, France</span>
+						<span>Rennes, France</span>
 					</div>
 				</div>
 			</div>
