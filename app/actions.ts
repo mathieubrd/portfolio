@@ -4,6 +4,7 @@ import { Resend } from "resend"
 import { ZodFormattedError, z } from "zod"
 
 const contactFormSchema = z.object({
+	"cf-turnstile-response": z.string(),
 	firstName: z.string().trim().min(1, {
 		message: "You must provide your first name",
 	}),
@@ -27,10 +28,11 @@ type SubmitContactFormResult = {
 }
 
 export const submitContactForm = async (
-	prevState: any,
+	_: any,
 	formData: FormData,
 ): Promise<SubmitContactFormResult> => {
 	const parsed = contactFormSchema.safeParse({
+		"cf-turnstile-response": formData.get("cf-turnstile-response"),
 		firstName: formData.get("firstName"),
 		lastName: formData.get("lastName"),
 		email: formData.get("email"),
@@ -44,6 +46,21 @@ export const submitContactForm = async (
 		return {
 			success: false,
 			errors: formatted,
+		}
+	}
+
+	const turnstileTokenValid = await validateTurnstileToken(
+		parsed.data["cf-turnstile-response"],
+	)
+	if (!turnstileTokenValid) {
+		return {
+			success: false,
+			errors: {
+				"cf-turnstile-response": {
+					_errors: ["Invalid Catcha"],
+				},
+				_errors: ["Invalid Captcha"],
+			},
 		}
 	}
 
@@ -78,4 +95,36 @@ export const submitContactForm = async (
 	return {
 		success: true,
 	}
+}
+
+type TurnstileResponse = {
+	success: boolean
+}
+
+const validateTurnstileToken = async (token: string): Promise<boolean> => {
+	const secretKey =
+		process.env.NODE_ENV === "development"
+			? "1x0000000000000000000000000000000AA"
+			: process.env.TURNSTILE_SECRET_KEY
+	if (!secretKey) {
+		throw new Error("Missing TURNSTILE_SECRET_KEY in environment variables")
+	}
+
+	const formData = new FormData()
+	formData.append("secret", secretKey)
+	formData.append("response", token)
+
+	const response = await fetch(
+		"https://challenges.cloudflare.com/turnstile/v0/siteverify",
+		{
+			method: "POST",
+			body: formData,
+		},
+	)
+
+	const data = (await response.json()) as TurnstileResponse
+
+	console.log(data)
+
+	return data.success
 }

@@ -14,7 +14,7 @@ export default function RootLayout({
 				<meta
 					name="description"
 					content="Personal portfolio of Mathieu Brochard - AWS Solutions Architect"
-				></meta>
+				/>
 			</head>
 
 			<body>
