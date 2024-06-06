@@ -17,7 +17,7 @@
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.0.18",
-		"@nextui-org/react": "^2.2.9",
+		"@nextui-org/react": "^2.4.1",
 		"@vercel/analytics": "^1.1.1",
 		"clsx": "^2.1.1",
 		"next": "14.2.3",
