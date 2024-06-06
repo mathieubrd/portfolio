@@ -36,11 +36,11 @@ export const ContactMeFloatingButton: React.FC<ButtonProps> = ({
 
 	return (
 		<motion.div
-			animate={{ y: [0, 10, 0] }}
+			animate={{ y: [0, 20, 0] }}
 			transition={{ y: { duration: 2, repeat: Infinity } }}
 			className={clsx(
-				shouldShow ? "opacity-100" : "opacity-0",
-				"transition-opacity fixed bottom-10 left-10 right-10 flex justify-center sm:justify-end z-10",
+				!shouldShow && "hidden",
+				"fixed bottom-10 left-10 right-10 flex justify-center sm:justify-end z-10",
 			)}
 		>
 			<Button
