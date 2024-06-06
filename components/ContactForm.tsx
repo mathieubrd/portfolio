@@ -2,9 +2,11 @@
 
 import { submitContactForm } from "@/app/actions"
 import { EnvelopeIcon, RocketLaunchIcon } from "@heroicons/react/24/solid"
-import { Button, Input, Textarea } from "@nextui-org/react"
+import { Button, ButtonProps, Input, Textarea } from "@nextui-org/react"
 import clsx from "clsx"
 import { useFormState, useFormStatus } from "react-dom"
+import { TurnstileWidget } from "./TurnstileWidget"
+import { useState } from "react"
 
 type ContactFormProps = {} & React.HTMLAttributes<HTMLDivElement>
 
@@ -13,6 +15,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 	...props
 }) => {
 	const [state, formAction] = useFormState(submitContactForm, null)
+	const [turnstileValid, setTurnstileValid] = useState(false)
 
 	return (
 		<div className={clsx(className, "w-full")} {...props}>
@@ -75,9 +78,20 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 							name="message"
 							placeholder="This is not 'nam. This is bowling. There are rules."
 							isRequired
+							minRows={5}
 							isDisabled={state?.success}
 							errorMessage={state?.errors?.message?._errors}
 						/>
+					</div>
+
+					{state?.errors?.["cf-turnstile-response"] && (
+						<span className="text-red-700 text-center sm:col-span-2">
+							Invalid captcha
+						</span>
+					)}
+
+					<div className="sm:col-span-2 flex justify-center">
+						<TurnstileWidget onVerify={() => setTurnstileValid(true)} />
 					</div>
 				</div>
 
@@ -94,7 +108,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 							Thanks for your message!
 						</Button>
 					) : (
-						<SubmitButton />
+						<SubmitButton disabled={!turnstileValid} />
 					)}
 				</div>
 			</form>
@@ -102,11 +116,18 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 	)
 }
 
-const SubmitButton: React.FC = () => {
+const SubmitButton: React.FC<ButtonProps> = ({ ...props }) => {
 	const { pending } = useFormStatus()
 
 	return pending ? (
-		<Button type="submit" color="primary" size="md" isDisabled isLoading>
+		<Button
+			type="submit"
+			color="primary"
+			size="md"
+			isDisabled
+			isLoading
+			{...props}
+		>
 			Sending
 		</Button>
 	) : (
@@ -115,6 +136,7 @@ const SubmitButton: React.FC = () => {
 			color="primary"
 			size="md"
 			startContent={<EnvelopeIcon className="w-6" />}
+			{...props}
 		>
 			Send
 		</Button>
