@@ -15,9 +15,6 @@
 			"prettier --write"
 		]
 	},
-	"peerDependencies": {
-		"sharp": "0.30.4"
-	},
 	"dependencies": {
 		"@heroicons/react": "^2.1.5",
 		"@nextui-org/react": "^2.4.8",
@@ -29,7 +26,8 @@
 		"react-dom": "^18",
 		"react-turnstile": "^1.1.4",
 		"resend": "^4.0.0",
-		"zod": "^3.23.8"
+		"zod": "^3.23.8",
+		"sharp": "0.32.6"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.5.0",
